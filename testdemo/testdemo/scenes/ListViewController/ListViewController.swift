@@ -29,12 +29,15 @@ class ListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            let cell = sender as? UITableViewCell,
+            let cell = sender as? ItemTableViewCell,
             let indexPath = tableView.indexPath(for: cell),
             let destinationVC = segue.destination as? ColorViewController
         else { return }
         
+        let uuid = UUID()
+        cell.set(heroID: uuid.uuidString)
         destinationVC.color = UIColor(hex: viewModel.items[indexPath.row].color)
+        destinationVC.colorHeroID = uuid.uuidString
     }
 }
 

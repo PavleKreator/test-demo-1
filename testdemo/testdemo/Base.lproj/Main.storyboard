@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroNavigationAnimationTypeString" value="fade"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EOc-15-yVR"/>
                     </connections>
@@ -57,6 +61,8 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="20"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="3Vk-ng-Kzh">
@@ -86,6 +92,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="FCs-DK-aDG" secondAttribute="bottom" constant="10" id="yqQ-6K-BSC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="colorView" destination="hPq-v4-WUz" id="ylN-F5-e37"/>
                                             <outlet property="subtitleLabel" destination="WkY-vU-QbD" id="Qyu-ys-OLg"/>
@@ -94,6 +103,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -113,6 +125,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="navigationButton" destination="QyH-3v-3Od" id="GZG-7U-MWf"/>
                         <outlet property="tableView" destination="SDJ-iN-2va" id="3lU-bM-ptA"/>
@@ -129,10 +144,37 @@
                     <view key="view" contentMode="scaleToFill" id="i2Y-Dh-ACM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcv-Ve-At5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="color"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gUv-HI-Y05"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tcv-Ve-At5" secondAttribute="bottom" id="NfF-SN-R7h"/>
+                            <constraint firstItem="tcv-Ve-At5" firstAttribute="leading" secondItem="i2Y-Dh-ACM" secondAttribute="leading" id="bot-Bl-L53"/>
+                            <constraint firstAttribute="trailing" secondItem="tcv-Ve-At5" secondAttribute="trailing" id="cZQ-l1-weL"/>
+                            <constraint firstItem="tcv-Ve-At5" firstAttribute="top" secondItem="i2Y-Dh-ACM" secondAttribute="top" id="w1r-lg-23S"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="uzJ-xA-gss"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="colorView" destination="tcv-Ve-At5" id="yyS-hb-VWf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5Z-aE-qRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

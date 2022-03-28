@@ -9,14 +9,19 @@ import Foundation
 import UIKit
 
 class ColorViewController: UIViewController {
+    @IBOutlet private weak var colorView: UIView?
+    
     var color: UIColor = .white {
         didSet {
-            view.backgroundColor = color
+            colorView?.backgroundColor = color
         }
     }
     
+    var colorHeroID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = color
+        colorView?.backgroundColor = color
+        colorView?.heroID = colorHeroID
     }
 }

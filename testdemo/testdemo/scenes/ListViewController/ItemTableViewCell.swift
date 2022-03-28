@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Hero
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
@@ -17,5 +18,9 @@ class ItemTableViewCell: UITableViewCell {
         colorView?.backgroundColor = color
         titleLabel?.text = title
         subtitleLabel?.text = subtitle
+    }
+    
+    func set(heroID: String) {
+        colorView?.heroID = heroID
     }
 }
