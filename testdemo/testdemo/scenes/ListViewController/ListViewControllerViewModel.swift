@@ -31,6 +31,7 @@ class ListViewControllerViewModel {
 
     
     @Published private(set) var items: [Item] = []
+    @Published private(set) var isConnectionActive = true
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -40,9 +41,12 @@ class ListViewControllerViewModel {
     
     func stopUpdating() {
         cancellables = []
+        isConnectionActive = false
+        items.sort { $0.color > $1.color }
     }
     
     func startUpdating() {
+        isConnectionActive = true
         CodableWebSocket<SocketItem>(url: Const.socketURL)
             .receive(on: DispatchQueue.main, options: nil)
             .sink { completion in
